@@ -24,22 +24,8 @@ namespace task1
 
         private void RotateObject()
         {
-            rotateValue.x = WrapAngle(rotateValue.x);
-            rotateValue.y = WrapAngle(rotateValue.y);
-            rotateValue.z = WrapAngle(rotateValue.z);
-
-            transform.rotation = Quaternion.Euler(rotateValue * Time.deltaTime);
-        }
-
-        private float WrapAngle(float angle) // ankyan parametrer
-        {
-            angle %= 360;   // -450 
-            if (angle > 180)
-                angle -= 360;
-            else if (angle < -180)
-                angle += 360;
-
-            return angle;
+            float rotationSpeed = 5.0f; // fralu arjeqy
+            transform.rotation *= Quaternion.Euler(rotateValue * Time.deltaTime * rotationSpeed);
         }
     }
 }
