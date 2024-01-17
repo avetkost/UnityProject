@@ -6,7 +6,7 @@ namespace Lesson2
 {
 public interface IRotatable
     {
-        void Rotate()
+        void Rotate();
         
     }
 }

@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using Lesson1;
 using UnityEngine;
 
 namespace Lesson2
 {
-    public class Capsule1Rotate : VirtualRotate
+    public class Capsule : VirtualRotate
     {
         protected override void ShapeRotate()
         {

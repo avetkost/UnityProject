@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Lesson2
 {
-    public class Cube : Shape
+    public class Cube1 : Shape
     {      
         protected override void RotateShape()
         {

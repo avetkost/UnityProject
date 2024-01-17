@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Lesson2
 {
-    public class Cube : MonoBehaviour, IRotatable
+    public class Cube2 : MonoBehaviour, IRotatable
     {
-        [SerializeField] private Vector3 targetRotation
+        [SerializeField] private Vector3 targetRotation;
         public void Rotate()
         {
-            tramsform.rotation = Quaternion.Euler(targetRotation);
+            transform.rotation = Quaternion.Euler(targetRotation);
         }
 
         

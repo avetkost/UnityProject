@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Lesson1;
+using Lesson2;
 using UnityEngine;
 
 namespace ImplementVirtual

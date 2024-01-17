@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Lesson2
 {
-    public class Capsule : MonoBehaviour, IRotatable
+    public class Capsule2 : MonoBehaviour, IRotatable
     {
         [SerializeField] private Vector3 targetRotation; 
         public void Rotate()
