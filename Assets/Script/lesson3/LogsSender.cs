@@ -2,24 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Lesson3
+namespace Logger
 {
     public class LogsSender : MonoBehaviour
-{
-    private List<ILogger> _loggers = new List<ILogger>();
-
-    void Update()
     {
-        foreach (var logger in _loggers)
+        private List<ILogger> _loggers = new List<ILogger>();
+
+
+        private float currentTime;
+        private void Update()
         {
-            logger.Print("good");
+            currentTime += Time.deltaTime;
+            if (currentTime > 1)
+            {
+                currentTime = 0;
+
+                foreach (var logger in _loggers)
+                {
+                    logger.Print("hi");
+                }
+            }
+        }
+        public void Register(ILogger logger)
+        {
+            _loggers.Add(logger);
         }
     }
-
-    public void Register(ILogger logger)
-    {
-        _loggers.Add(logger);
-    }
-}
-
 }
