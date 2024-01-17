@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Lesson2
 {
-    public class Cylinder1 : Shape
-    {
-        
+    public class Capsule1 : AbstractShape
+    {     
         protected override void RotateShape()
         {
-            transform.rotation = Quaternion.Euler(transform.eulerAngles.x, targetRotation.y, transform.eulerAngles.z);
+            transform.rotation = Quaternion.Euler(targetRotation.x, transform.eulerAngles.y, transform.eulerAngles.z);
         }
     }
 

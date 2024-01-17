@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 namespace Lesson2
 {
-    public abstract class Shape : MonoBehaviour
+    public abstract class AbstractShape : MonoBehaviour
     {
         [SerializeField] protected Vector3 targetRotation;
 

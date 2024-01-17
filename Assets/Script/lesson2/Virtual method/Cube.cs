@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace ImplementVirtual
 {
-    public class Cube : VirtualRotate
+    public class Cube : BaseRotate
     {
         protected override void ShapeRotate()
         {            

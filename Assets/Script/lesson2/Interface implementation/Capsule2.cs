@@ -9,7 +9,7 @@ namespace Lesson2
         [SerializeField] private Vector3 targetRotation; 
         public void Rotate()
         {
-            transform.rotation = Quaternion.Euler(targetRotation.x, transform.eulerAngles.y, transform.eulerAngles.z);                        
+            transform.rotation = Quaternion.Euler(targetRotation.x, transform.eulerAngles.y, transform.eulerAngles.z);
         }    
     }
 }  

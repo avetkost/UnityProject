@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Lesson2
 {
-    public class Capsule : VirtualRotate
+    public class Capsule : BaseRotate
     {
         protected override void ShapeRotate()
         {

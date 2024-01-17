@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Lesson2
 {
-    public class VirtualRotate : MonoBehaviour
+    public class BaseRotate : MonoBehaviour
     {
         [SerializeField] protected Vector3 targetRotation;
         

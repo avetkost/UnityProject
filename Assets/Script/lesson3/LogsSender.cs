@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Lesson3
 {
-   public class LogsSender : MonoBehaviour
+    public class LogsSender : MonoBehaviour
 {
     private List<ILogger> _loggers = new List<ILogger>();
 
