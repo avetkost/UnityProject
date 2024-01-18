@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Logger
+namespace Lesson3
 {
     public class UiTextLogger : MonoBehaviour, ILogger
     {

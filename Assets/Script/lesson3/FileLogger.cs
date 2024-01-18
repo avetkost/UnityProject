@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-namespace Logger
+namespace Lesson3
 {
     public class FileLogger : MonoBehaviour, ILogger
     {
@@ -16,22 +16,20 @@ namespace Logger
         {
             filePath = Path.Combine(Application.dataPath, fileName);
             logsSender.Register(this);
-        }
-
+        }   
         public void Print(string log)
         {
-            File.WriteAllText(filePath, string.Empty);
-
-            using (StreamWriter writer = new StreamWriter(filePath, false))
+            // Проверяем существование файла
+            if (!File.Exists(filePath))
             {
-                writer.Write(log + $"\n {System.DateTime.Now} \n {this}");
+                // Если файл не существует, создаем его
+                File.Create(filePath).Close();
             }
-
-        }
-
-        public override string ToString()
-        {
-            return $"FileLogger at {gameObject.name}";
+            // Открываем файл для записи с использованием StreamWriter
+            using (StreamWriter writer = new StreamWriter(filePath, true))
+            {
+                writer.WriteLine($"{System.DateTime.Now} - {filePath}: {log}");
+            }
         }
     }
 }
