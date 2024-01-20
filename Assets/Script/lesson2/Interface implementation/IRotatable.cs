@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace Lesson2
 {
-public interface IRotatable
+    public interface IRotatable
     {
         void Rotate();
-        
+
     }
 }

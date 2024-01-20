@@ -11,6 +11,6 @@ namespace Lesson2
             transform.rotation = Quaternion.Euler(targetRotation);
         }
 
-        
+
     }
 }

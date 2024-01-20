@@ -21,7 +21,7 @@ namespace Lesson4
             {
                 using (StreamWriter writer = new StreamWriter(filePath, true))
                 {
-                    writer.Write($"{log} \n {DateTime.Now} \n Logger class: {GetType().Name} \n Additional Info: {additionalInfo}");
+                    writer.Write($"{log} \n {DateTime.Now} \n Logger class: {GetType().Name}");
                 }
             }
             catch (IOException e)

@@ -14,7 +14,7 @@ namespace Lesson2
             RotateShape();
         }
 
-        
+
     }
 
 }

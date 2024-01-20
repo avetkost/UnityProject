@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Lesson2
 {
     public class Cube1 : AbstractShape
-    {      
+    {
         protected override void RotateShape()
         {
             transform.rotation = Quaternion.Euler(targetRotation);

@@ -4,10 +4,9 @@ using UnityEngine;
 
 namespace Lesson4
 {
-    // Класс для отправки логов
     public class LogsSender : MonoBehaviour
     {
-        public static LogsSender Instance; // Синглтон
+        public static LogsSender Instance;
 
         private List<AbstractLogger> _loggers = new List<AbstractLogger>();
 
@@ -38,8 +37,6 @@ namespace Lesson4
                 }
             }
         }
-
-        // Метод для регистрации логгера
         public void Register(AbstractLogger logger)
         {
             _loggers.Add(logger);

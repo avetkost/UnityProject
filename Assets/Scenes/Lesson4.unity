@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 753976192}
   - component: {fileID: 753976191}
   - component: {fileID: 753976190}
+  - component: {fileID: 753976194}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -319,6 +320,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &753976194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753976189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11703d8d4dc4a7408f44ee29bfdb949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +503,7 @@ GameObject:
   - component: {fileID: 1616827126}
   - component: {fileID: 1616827128}
   - component: {fileID: 1616827127}
+  - component: {fileID: 1616827129}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -543,7 +557,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -558,6 +572,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616827125}
   m_CullTransparentMesh: 1
+--- !u!114 &1616827129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616827125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6c1829556cb36245b55c97ebeaeb2e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textLogger: {fileID: 1616827127}
+  logsSender: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

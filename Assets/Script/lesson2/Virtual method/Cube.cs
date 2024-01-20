@@ -1,15 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Lesson2;
 using UnityEngine;
 
-namespace ImplementVirtual
+namespace Lesson2
 {
-    public class Cube : BaseRotate
+    public class Cube : VirtualRotate
     {
         protected override void ShapeRotate()
-        {            
+        {
             base.ShapeRotate();
         }
     }

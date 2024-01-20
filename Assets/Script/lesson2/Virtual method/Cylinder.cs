@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Lesson2
 {
-    public class Cylinder : BaseRotate
-    {    
+    public class Cylinder : VirtualRotate
+    {
         protected override void ShapeRotate()
         {
             transform.rotation = Quaternion.Euler(targetRotation.x, transform.eulerAngles.y, transform.eulerAngles.z);

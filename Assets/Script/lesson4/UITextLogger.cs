@@ -5,11 +5,9 @@ using System;
 
 namespace Lesson4
 {
-    // Класс для логирования в UI Text
     public class UITextLogger : AbstractLogger
     {
-        [SerializeField]
-        private Text textLogger;
+        [SerializeField] private Text textLogger;
 
         private void Awake()
         {
@@ -18,7 +16,7 @@ namespace Lesson4
 
         public override void Print(string log)
         {
-            textLogger.text = $"{log} \n {DateTime.Now} \n Logger class: {GetType().Name} \n Additional Info: {additionalInfo}";
+            textLogger.text = $"{log} \n {DateTime.Now}";
         }
     }
 }

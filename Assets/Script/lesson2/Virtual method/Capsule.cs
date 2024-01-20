@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Lesson2
 {
-    public class Capsule : BaseRotate
+    public class Capsule : VirtualRotate
     {
         protected override void ShapeRotate()
         {
-            transform.rotation = Quaternion.Euler(transform.eulerAngles.x, targetRotation.y, transform.eulerAngles.z);            
+            transform.rotation = Quaternion.Euler(transform.eulerAngles.x, targetRotation.y, transform.eulerAngles.z);
         }
     }
 }

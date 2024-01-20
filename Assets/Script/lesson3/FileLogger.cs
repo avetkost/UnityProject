@@ -16,7 +16,7 @@ namespace Lesson3
         {
             filePath = Path.Combine(Application.dataPath, fileName);
             logsSender.Register(this);
-        }   
+        }
         public void Print(string log)
         {
             // Проверяем существование файла

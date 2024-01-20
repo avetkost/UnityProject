@@ -6,23 +6,23 @@ namespace Lesson2
 {
     public class Rotaitor : MonoBehaviour
     {
-        [SerializeField]  private List<GameObject> rotatableGameObjects;
-        private List<IRotatable> _rotatables = new();
-            private void Awake()
+        [SerializeField] private List<GameObject> shapes = new List<GameObject>();
+        private List<IRotatable> irotatables = new List<IRotatable>();
+
+        void Awake()
+        {
+            foreach (var shape in shapes)
             {
-                foreach (GameObject obj in rotatableGameObjects)
-                {
-                    IRotatable rotatable = obj.GetComponent<IRotatable>();
-                    _rotatables.Add(rotatable);
-                }
+                irotatables.Add(shape.GetComponent<IRotatable>());
             }
-            void Update()
-            {   
-                foreach (IRotatable rotatable in _rotatables)
-                {
-                    rotatable.Rotate();
-                }
+        }
+
+        void Update()
+        {
+            foreach (var iRotatable in irotatables)
+            {
+                iRotatable.Rotate();
             }
-        
+        }
     }
 }
