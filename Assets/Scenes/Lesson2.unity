@@ -632,7 +632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2832594a1b0386942b4e11833c687ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotatableGameObjects:
+  shapes:
   - {fileID: 1980261909}
   - {fileID: 1614329041}
   - {fileID: 613075546}

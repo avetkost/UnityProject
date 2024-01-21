@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using UnityEngine;
 
@@ -7,29 +9,26 @@ namespace Lesson3
 {
     public class FileLogger : MonoBehaviour, ILogger
     {
-        private string fileName = "Log.txt";
-        private string filePath;
-
-        [SerializeField] LogsSender logsSender;
-
+        private  string Path = Application.dataPath + "/Log.txt";
+        [SerializeField] private LogsSender _logsSender;
         private void Awake()
         {
-            filePath = Path.Combine(Application.dataPath, fileName);
-            logsSender.Register(this);
+            if(!File.Exists(Path))
+            {
+                File.Create(Path);
+            }
+            _logsSender.Register(this);
+            
         }
+
         public void Print(string log)
         {
-            // Проверяем существование файла
-            if (!File.Exists(filePath))
+            
+            using(StreamWriter writer = new StreamWriter(Path, true))
             {
-                // Если файл не существует, создаем его
-                File.Create(filePath).Close();
-            }
-            // Открываем файл для записи с использованием StreamWriter
-            using (StreamWriter writer = new StreamWriter(filePath, true))
-            {
-                writer.WriteLine($"{System.DateTime.Now} - {filePath}: {log}");
-            }
+                writer.WriteLine ($"[{DateTime.Now.ToString(CultureInfo.InvariantCulture)}] :: {GetType().Name} Logged: {log}");
+            }   
+            
         }
     }
 }

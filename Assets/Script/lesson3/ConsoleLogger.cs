@@ -1,21 +1,19 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Lesson3
+namespace Lesson3 
 {
     public class ConsoleLogger : MonoBehaviour, ILogger
     {
-        [SerializeField] LogsSender logsSender;
-
-        private void Awake()
+        [SerializeField] private LogsSender _logsSender;
+    
+        public void Print (string log) 
         {
-            logsSender.Register(this);
+            Debug.Log(log);
         }
-
-        public void Print(string log)
+        private void Awake ()
         {
-            Debug.Log(log + $"\n {System.DateTime.Now} \n {this.GetType().Name}");
+            _logsSender.Register(this);
         }
     }
 }

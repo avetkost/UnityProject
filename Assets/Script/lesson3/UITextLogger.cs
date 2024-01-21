@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,19 +7,20 @@ namespace Lesson3
 {
     public class UiTextLogger : MonoBehaviour, ILogger
     {
-        [SerializeField] Text textLogger;
+        [SerializeField] private Text textLogger;
 
-        [SerializeField] LogsSender logsSender;
+        [SerializeField] private LogsSender _logsSender;
 
         private void Awake()
         {
-            logsSender.Register(this);
+            _logsSender.Register(this);
+            textLogger.text = " ";
         }
 
         public void Print(string log)
         {
-            textLogger.text = log + $"\n {System.DateTime.Now} \n {this.GetType().Name}";
+            
+            textLogger.text = textLogger.text + "\n" + log;     
         }
-
     }
 }
