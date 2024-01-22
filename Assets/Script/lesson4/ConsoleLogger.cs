@@ -1,18 +1,19 @@
-using System;
 using UnityEngine;
 
 namespace Lesson4
 {
     public class ConsoleLogger : AbstractLogger
     {
-        private void Awake()
+        [SerializeField] private LogsSender _logsSender;
+
+        public override void Print (string log)
         {
-            LogsSender.Instance.Register(this);
+            Debug.Log(log);
         }
 
-        public override void Print(string log)
+        private void Awake ()
         {
-            Debug.Log($"{log} \n {DateTime.Now} \n Logger class: {GetType().Name}");
+            _logsSender.Register(this);
         }
     }
 }

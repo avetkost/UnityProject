@@ -1,33 +1,39 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Lesson4
 {
-    // Класс для логирования в файл
     public class FileLogger : AbstractLogger
     {
-        private string filePath;
+        [SerializeField] private LogsSender logsSender;
 
+        private float MyTimer;
+
+        private string path = Application.dataPath + "\\Script\\lesson4\\AbsLog.txt";
         private void Awake()
         {
-            filePath = Path.Combine(Application.dataPath, "Log.txt");
-            LogsSender.Instance.Register(this);
+            Debug.Log(path);
+            if(!File.Exists(path)) 
+            {
+                File.Create(path);
+            }
+            File.WriteAllText(path, "");
+            logsSender.Register(this);
         }
-
         public override void Print(string log)
         {
-            try
+            MyTimer += Time.deltaTime; 
+            if (MyTimer >= 1f)
             {
-                using (StreamWriter writer = new StreamWriter(filePath, true))
-                {
-                    writer.Write($"{log} \n {DateTime.Now} \n Logger class: {GetType().Name}");
-                }
+            MyTimer %= 1f;
+            log = log + "\n";
             }
-            catch (IOException e)
-            {
-                Debug.LogError($"Error writing to the file: {e.Message}");
-            }
+            File.AppendAllText(path, log);
         }
     }
 }

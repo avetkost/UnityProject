@@ -1,23 +1,25 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
-
 
 namespace Lesson4
 {
     public class UITextLogger : AbstractLogger
     {
-        [SerializeField] private Text textLogger;
+        [SerializeField] private LogsSender logsSender;
+        [SerializeField] private TMP_Text text;
 
         private void Awake()
         {
-            LogsSender.Instance.Register(this);
+            text.text = "";
+            logsSender.Register(this);
         }
+
 
         public override void Print(string log)
         {
-            textLogger.text = $"{log} \n {DateTime.Now}";
+            text.text = text.text + log + logInfo + "\n";
         }
+
     }
 }
-
