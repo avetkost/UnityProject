@@ -14,7 +14,7 @@ namespace Lesson4
 
         private float MyTimer;
 
-        private string path = Application.dataPath + "\\Script\\lesson4\\AbsLog.txt";
+        private string path = Application.dataPath + "@Script\\lesson4\\AbsLog.txt";
         private void Awake()
         {
             Debug.Log(path);
