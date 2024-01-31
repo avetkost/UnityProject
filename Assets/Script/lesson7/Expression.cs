@@ -1,34 +1,60 @@
 using System;
+using Unity.VisualScripting;
+using UnityEngine;
 
 namespace Lesson7
 {
     public class Expression
     {
-        //Y = log3(x^2 + 4)
-        public float Ex1Exp1 (float x)
+            //Y = log3(x^2 + 4)
+        public void Ex1Exp1 ()
         {
-            return MathF.Log(x * x + 4, 3);
+            for (float x = -7.5f; x <= 8.3f; x += 0.3f)
+            {
+                float result = MathF.Log(x * x + 4, 3);
+                Console.WriteLine($"x = {x}, y = {result}");
+    
+            }
+            
         }
         //Y = (x + x2)7
-        public float Ex1Exp2 (float x)
+        public void Ex1Exp2 ()
         {
-            return MathF.Pow((x + x * x) , 7);
+            for (float x = -4.8f; x <= 5.2f; x += 0.2f)
+            {
+                float result = Mathf.Pow(Mathf.Atan(x + 1f), 2);
+                Console.WriteLine($"x={x},Y={result}");
+            }
         }
         //Y = arctan(x + 1)
-        public float Ex1Exp3 (float x)
+        public void Ex1Exp3 ()
         {
-            return MathF.Pow(MathF.Atan(x + 1f) ,2);
+            for (float x = -4.8f; x <= 5.2f; x += 0.2f)
+            {
+                float result = Mathf.Pow(Mathf.Atan(x + 1f), 2);
+                Console.WriteLine($"x={x},Y={result}");
+            }
         }
         //Y = e^cot(x)
-        public float Ex1Exp4 (float x)
+        public void Ex1Exp4()
         {
-            return MathF.Exp(1/MathF.Tan(x));
+            for (float x = -6.4f; x <= 2.4f; x += 0.2f)
+            {
+                float result = Mathf.Exp(1 / Mathf.Tan(x));
+                Console.WriteLine($"x={x},Y={result}");
+            }
         }
+
         //Y = |2x + x^3|
-        public float Ex1Exp5 (float x)
+        public void Ex1Exp5 ()
         {
-            return MathF.Abs(2 * x + MathF.Pow(x, 3));
+            for (float x = -3.3f; x <= 2.7f; x += 0.3f)
+            {
+                float result = Mathf.Abs(2 * x + Mathf.Pow(x, 3));
+                Console.WriteLine($"x={x},Y={result}");
+            }
         }
+        
         //∑ 𝑥𝑖² ,  x₁=1; x₀=0,5| x₁ - 4|
         public float Ex2Exp1(int n)
         {
