@@ -15,5 +15,5 @@ namespace Lesson3
         {
             _logsSender.Register(this);
         }
-    }
+    }   
 }

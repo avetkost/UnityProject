@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,7 +14,6 @@ namespace Lesson7
             {
                 float result = MathF.Log(x * x + 4, 3);
                 Console.WriteLine($"x = {x}, y = {result}");
-    
             }
             
         }

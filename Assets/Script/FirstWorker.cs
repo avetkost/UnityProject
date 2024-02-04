@@ -1,4 +1,4 @@
-using System;
+/*using System;
 
 public interface IWorker
 {
@@ -30,3 +30,4 @@ static void Main()
     worker.Print();
     FW1.Print();
 }
+*/
